@@ -98,4 +98,4 @@ read, screen-diff tests are too noisy in this game), are in the
 
 ## License
 
-No license chosen yet. Until then, all rights reserved by the author.
+MIT — see [LICENSE](LICENSE).
