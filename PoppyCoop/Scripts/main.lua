@@ -245,6 +245,24 @@ local function dressPuppet(puppet, pawn)
         if scale then
             safe("setScale", function() puppet:SetActorScale3D(vec(scale.X, scale.Y, scale.Z)) end)
         end
+        -- Simple yellow tint (keep the model unchanged)
+        pcall(function()
+            local base = LoadObject(nil, "/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial")
+            if base and base:IsValid() then
+                puppetComp:SetMaterial(0, base)
+                puppetComp:SetVectorParameterValueOnMaterials("Color", FLinearColor(1,1,0,1))
+            else
+                local existing = puppetComp:GetMaterial(0)
+                if existing and existing:IsValid() then
+                    local mid = CreateMaterialInstanceDynamic(existing, puppet)
+                    if mid and mid:IsValid() then
+                        mid:SetVectorParameterValue("BaseColor", FLinearColor(1,1,0,1))
+                        mid:SetVectorParameterValue("Color", FLinearColor(1,1,0,1))
+                        puppetComp:SetMaterial(0, mid)
+                    end
+                end
+            end
+        end)
         if CONFIG.copyAnim then
             safe("setAnim", function() puppetComp.AnimClass = animClass end)
         end
