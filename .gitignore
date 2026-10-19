@@ -1,0 +1,14 @@
+# Test-run leftovers
+coop-net/
+*.state
+cmd.txt
+UE4SS.log
+playerid.txt
+netdir.txt
+
+# Python
+__pycache__/
+*.pyc
+
+# Screenshots
+*.png
