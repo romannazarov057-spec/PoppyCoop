@@ -17,14 +17,14 @@ Two transports:
 
 Usage:
   python cooprelay.py --transport udp --role host --self A --peer B \
-      --netdir <game bin>\\coop-net\\A --port 27099
+      --netdir D:\\coop-work\\poppy-playtime\\net\\A --port 27099
   python cooprelay.py --transport udp --role client --host 127.0.0.1 --port 27099 \
-      --self B --peer A --netdir <game bin>\\coop-net\\B
+      --self B --peer A --netdir D:\\coop-work\\poppy-playtime\\net\\B
 
   python cooprelay.py --transport steam --role host --self A --peer B \
-      --netdir <game bin>\\coop-net\\A --dll <dir-with-steam_api64.dll>
+      --netdir ...\\net\\A --dll <dir-with-steam_api64.dll>
   python cooprelay.py --transport steam --role client --lobby <id> --self B --peer A \
-      --netdir <game bin>\\coop-net\\B --dll <dir-with-steam_api64.dll>
+      --netdir ...\\net\\B --dll <dir-with-steam_api64.dll>
 """
 
 import argparse

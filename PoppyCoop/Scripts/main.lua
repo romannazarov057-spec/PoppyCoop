@@ -42,13 +42,12 @@ local CONFIG = {
     driveStartTicks = 0,     -- start driving immediately after dressing
 
     -- Transport seam. "file" is a stand-in for the local automated test: the mod
-    -- writes its own avatar state to <netDir>\local.state and drives the puppet to
-    -- whatever <netDir>\peer.state holds. The real transport (Steam/Spacewar via a
-    -- helper exe, per playbook/networking-steam-spacewar.md) plugs in behind this.
-    -- Relative to the game's working directory ("coop-net" is created on the fly);
-    -- deploy.ps1 can point one instance at its own folder through netdir.txt.
+    -- writes its own avatar state to <netDir>\<playerId>.state and drives the
+    -- puppet to whatever <netDir>\<peerId>.state holds. The real transport
+    -- (Steam/Spacewar via a helper, per playbook/networking-steam-spacewar.md)
+    -- plugs in behind this: relay/cooprelay.py moves those two files across.
     transport = "file",
-    netDir = "coop-net",
+    netDir = "D:\\coop-work\\poppy-playtime\\net",
     driveMode = "peer",      -- "peer" = follow peer.state, else "orbit"/"pose" = local demo
     playerId = "A",          -- overridden by playerid.txt in the game's working dir
     poseDistance = 350.0,    -- "pose" mode: how far in front of the player to park the puppet

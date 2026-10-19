@@ -10,5 +10,8 @@ netdir.txt
 __pycache__/
 *.pyc
 
+# Launcher: remembers local paths and the last lobby id
+launcher/launcher.json
+
 # Screenshots
 *.png

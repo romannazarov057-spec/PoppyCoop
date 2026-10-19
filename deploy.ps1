@@ -1,8 +1,7 @@
 # Deploy the PoppyCoop mod into the isolated test copy of the game.
 # The owner's real install is never touched.
 param(
-    [Parameter(Mandatory = $true)]
-    [string]$TestBin,
+    [string]$TestBin = "D:\coop-work\poppy-playtime\WindowsNoEditor\Poppy_Playtime\Binaries\Win64",
     [switch]$EnableProbe,
     [string]$PlayerId = "A",
     [string]$NetDir = ""
